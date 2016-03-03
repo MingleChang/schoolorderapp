@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SOHomeViewController">
+            <connections>
+                <outlet property="aeraLab" destination="jE0-o2-1zC" id="6Fm-yr-vcp"/>
+                <outlet property="mainWeb" destination="vQv-CV-Mdd" id="yY1-fO-g9k"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eol-Xa-laE">
+                    <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="重庆" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jE0-o2-1zC">
+                            <rect key="frame" x="9" y="12" width="60" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="F5Y-9I-fri"/>
+                                <constraint firstAttribute="width" constant="60" id="mYa-L3-kee"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconfont-xiangxia.png" translatesAutoresizingMaskIntoConstraints="NO" id="ubI-SL-7Ij">
+                            <rect key="frame" x="64" y="15" width="20" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="20" id="ob3-sQ-VJk"/>
+                                <constraint firstAttribute="height" constant="15" id="rAR-d7-Ch7"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zcn-jj-J82">
+                            <rect key="frame" x="9" y="5" width="83" height="34"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="83" id="Pyn-CA-Us4"/>
+                                <constraint firstAttribute="height" constant="34" id="ewa-ZQ-tKi"/>
+                            </constraints>
+                            <connections>
+                                <action selector="selectAreaAction:" destination="-1" eventType="touchUpInside" id="yDw-w6-0Vw"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="ubI-SL-7Ij" firstAttribute="top" secondItem="eol-Xa-laE" secondAttribute="top" constant="15" id="Fqi-AW-TsH"/>
+                        <constraint firstAttribute="height" constant="44" id="FzZ-50-tuL"/>
+                        <constraint firstItem="jE0-o2-1zC" firstAttribute="leading" secondItem="eol-Xa-laE" secondAttribute="leading" constant="9" id="Rmd-me-0nH"/>
+                        <constraint firstItem="Zcn-jj-J82" firstAttribute="top" secondItem="eol-Xa-laE" secondAttribute="top" constant="5" id="XeU-ma-AHL"/>
+                        <constraint firstItem="Zcn-jj-J82" firstAttribute="leading" secondItem="eol-Xa-laE" secondAttribute="leading" constant="9" id="iRR-xR-Ciu"/>
+                        <constraint firstItem="jE0-o2-1zC" firstAttribute="top" secondItem="eol-Xa-laE" secondAttribute="top" constant="12" id="jtL-Fw-6tw"/>
+                        <constraint firstItem="ubI-SL-7Ij" firstAttribute="leading" secondItem="eol-Xa-laE" secondAttribute="leading" constant="64" id="rwN-Br-C0u"/>
+                    </constraints>
+                </view>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQv-CV-Mdd">
+                    <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="dRa-5g-YQ3"/>
+                    </connections>
+                </webView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Il3-D4-oAz">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="vQv-CV-Mdd" secondAttribute="bottom" id="3xQ-5K-qrE"/>
+                <constraint firstItem="Il3-D4-oAz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8wF-By-otm"/>
+                <constraint firstItem="vQv-CV-Mdd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Aad-uW-ahh"/>
+                <constraint firstItem="vQv-CV-Mdd" firstAttribute="top" secondItem="eol-Xa-laE" secondAttribute="bottom" id="C0D-Bz-9Q1"/>
+                <constraint firstAttribute="trailing" secondItem="Il3-D4-oAz" secondAttribute="trailing" id="DrH-fm-gGF"/>
+                <constraint firstItem="eol-Xa-laE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="K3i-Ke-M2c"/>
+                <constraint firstItem="Il3-D4-oAz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="S3G-j6-V3F"/>
+                <constraint firstItem="eol-Xa-laE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="ZpV-bP-0NA"/>
+                <constraint firstItem="eol-Xa-laE" firstAttribute="top" secondItem="Il3-D4-oAz" secondAttribute="bottom" id="a0d-cD-Pa1"/>
+                <constraint firstAttribute="trailing" secondItem="eol-Xa-laE" secondAttribute="trailing" id="fvk-8J-u6S"/>
+                <constraint firstAttribute="trailing" secondItem="vQv-CV-Mdd" secondAttribute="trailing" id="tU6-Ca-rZN"/>
+            </constraints>
+            <point key="canvasLocation" x="598" y="362"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="iconfont-xiangxia.png" width="64" height="64"/>
+    </resources>
+</document>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SOSortView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdB-av-DoT">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <action selector="dismissButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="KHI-6v-Oez"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cok-qh-BFs">
+                    <rect key="frame" x="0.0" y="64" width="320" height="176"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="176" id="rd7-vd-qLn"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="cEU-Qz-vJs"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="SBx-OR-llL"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="cok-qh-BFs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="D1Z-KL-T9r"/>
+                <constraint firstAttribute="bottom" secondItem="qdB-av-DoT" secondAttribute="bottom" id="GBV-zf-OL5"/>
+                <constraint firstItem="cok-qh-BFs" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="64" id="VgJ-s8-oRj"/>
+                <constraint firstAttribute="trailing" secondItem="qdB-av-DoT" secondAttribute="trailing" id="Z0J-Bp-GhL"/>
+                <constraint firstItem="qdB-av-DoT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="aRg-ND-wmO"/>
+                <constraint firstItem="qdB-av-DoT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ckG-22-odR"/>
+                <constraint firstAttribute="trailing" secondItem="cok-qh-BFs" secondAttribute="trailing" id="q6K-nH-VSw"/>
+            </constraints>
+            <connections>
+                <outlet property="tableView" destination="cok-qh-BFs" id="z33-qf-Mcx"/>
+            </connections>
+            <point key="canvasLocation" x="370" y="286"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,131 @@
+//
+//  PrefixHeader.pch
+//  schoolorderapp
+//
+//  Created by cjw on 16/1/5.
+//  Copyright © 2016年 MingleChang. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
+
+#ifdef __OBJC__
+#import "SOManager.h"
+#import "UIImageView+AFNetworking.h"
+#import "MCDevice.h"
+#endif
+
+/***********自定义的打印方法*************/
+#define __MCLOG(s, ...) \
+NSLog(@"%@",[NSString stringWithFormat:(s), ##__VA_ARGS__])
+#ifdef DEBUG
+#define MCLOG(...) __MCLOG(__VA_ARGS__)//如果是debug状态则打印值
+#else
+#define MCLOG(...) do {} while (0)//如果不是debug状态则无操作
+#endif
+//建议之后一直使用MCLOG代替NSLog
+/*************************************/
+
+#define ONE_PIXEL 1/[UIScreen mainScreen].scale//一个像素
+
+//颜色转换
+#define RGBColor(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+
+#define ColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+#define ColorFromRGBA(rgbValue,alpha) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:alpha?alpha:1.0]
+
+#define SCREEN_WIDTH [MCDevice screenWidth]
+
+//TABBAR颜色配置
+#define TABBAR_BG_COLOR RGBColor(232, 232, 232, 1.0)
+#define TABBAR_ITEM_NORMAL_COLOR RGBColor(123,123,123,1.0)
+#define TABBAR_ITEM_SELECTED_COLOR RGBColor(69,164,68,1.0)
+
+#define ALIPAY_SCHEMES @"alipayschemes"
+#define UNIONPAY_SCHEMES @"unionpayschemes"
+
+//UserDefault Key
+#define USERDEFAULT_USER_LOGIN @"USERDEFAULT_USER_LOGIN"
+#define USERDEFAULT_TOP_AREA @"USERDEFAULT_TOP_AREA"
+#define USERDEFAULT_SUB_AREA @"USERDEFAULT_SUB_AREA"
+
+//Notification Key
+#define SELECT_AREA_NOTIICATION @"SELECT_AREA_NOTIICATION"
+#define COMMENT_SUCCESS_NOTICATION @"COMMENT_NOTICATION"
+#define PAY_SUCCESS_NOTICATION @"PAY_SUCCESS_NOTICATION"
+#define ORDER_CANCEL_NOTICATION @"ORDER_CANCEL_NOTICATION"
+
+#define QR_CODE_IMAGE_SIDE 240
+
+//NetWork
+#define CONFIGURE_URL @"http://182.92.226.152:8085/down/global/order.json"
+#define HTTP_URL [SOManager manager].configure.defaultService
+//POST
+#define TOKEN_PROTOCOL @"/token"
+#define TOKEN_PROTOCOL_ID @"TOKEN"
+#define LOGIN_PROTOCOL @"/login"
+#define LOGIN_PROTOCOL_ID @"LOGIN"
+#define SMS_PROTOCOL @"/user/sms"
+#define SMS_PROTOCOL_ID @"SMS_VERIFICATION"
+#define SMS_VALIDATE_PROTOCOL @"/user/smsvalidate"
+#define SMS_VALIDATE_PROTOCOL_ID @"VALIDATE"
+#define REGISTER_PROTOCOL @"/user/register"
+#define REGISTER_PROTOCOL_ID @"REGISTER"
+#define FORGET_PROTOCOL @"/user/setpass"
+#define FORGET_PROTOCOL_ID @"SET_PASS"
+#define CHANGE_PASSWORD_PROTOCOL @"/user/changepass"
+#define CHANGE_PASSWORD_PROTOCOL_ID @"CHANGE_PASS"
+#define SCAN_QRCODE_PROTOCOL @"/coach/qrcode"
+#define SCAN_QRCODE_PROTOCOL_ID @"CheckSignMessage"
+#define SCHOOL_LIST_PROTOCOL @"/school/list"
+#define SCHOOL_LIST_PROTOCOL_ID @"SCHOOLLIST"
+#define COACH_PLAN_PROTOCOL @"/school/coach_list/v2"
+#define COACH_PLAN_PROTOCOL_ID @"SCHOOL_COACH_PLAN_LIST"
+#define PLAN_LIST_PROTOCOL @"/plan/list/v2"
+#define PLAN_LIST_PROTOCOL_ID @"PLAN_LIST"
+#define ORDER_PROTOCOL @"/order"
+#define ORDER_PROTOCOL_ID @"ORDER"
+#define ORDER_CANCEL_PROTOCOL @"/ordercancel"
+#define ORDER_CANCEL_PROTOCOL_ID @"ORDER_CANCEL"
+#define RATING_PROTOCOL @"/rating"
+#define RATING_PROTOCOL_ID @"RESERVATION_RATING"
+#define PAY_PROTOCOL @"/order/pay"
+#define PAY_PROTOCOL_ID @"PAY"
+#define PAY_CALLBACK_PROTOCOL @"/pay/callback"
+#define PAY_CALLBACK_PROTOCOL_ID @"PAY_CALLBACK"
+#define ORDER_CANCEL_PROTOCOL @"/ordercancel"
+#define ORDER_CANCEL_PROTOCOL_ID @"ORDER_CANCEL"
+
+#define SCHOOL_List @"/school/list"
+#define SCHOOL_APPLY @"/user/order/entry"
+
+
+//GET
+#define AREA_PROTOCOL @"/server/list"
+#define RESERVATINONS_PROTOCOL(type) [NSString stringWithFormat:@"/reservations/v2/%@",type]
+#define ACCOUNT_PROTOCOL @"/user/account"
+#define PAYLIST_PROTOCOL(student_id,type) [NSString stringWithFormat:@"/student/paylist/%@/%i",student_id,type]
+#define GET_QRCODE_PROTOCOL(student_id) [NSString stringWithFormat:@"/user/qrcode/%@",student_id]
+#define GET_CLASS_PROTOCOL(school_id) [NSString stringWithFormat:@"/school/course/list/%@",school_id]
+#define GET_DISCUSS_PROTOCOL(school_id,evaluate,pageSize,pageNo) [NSString stringWithFormat:@"/school/commentary/list/%@/%@/%@/%@",school_id,evaluate,pageSize,pageNo]
+#define GET_INTRODUTION_PROTOCOL(school_id) [NSString stringWithFormat:@"school/content/%@/01",school_id]
+#define GET_GROUND_PROTOCOL(school_id) [NSString stringWithFormat:@"school/place/list/%@",school_id]
+#define GET_COACH_PROTOCOL(school_id,pageNo,pageSize) [NSString stringWithFormat:@"school/coach/list/%@/%@/%@",school_id,pageNo,pageSize]
+#define GET_SCHOOL_IMAGE_LIST(school_id ) [NSString stringWithFormat:@"school/img/list/%@/02",school_id]
+#define GET_COACH_INFO_PROTOCOL(coach_id) [NSString stringWithFormat:@"/coach/%@",coach_id]
+#define GET_ORDER_INFO_PROTOCOL(order_id) [NSString stringWithFormat:@"/order/%@",order_id]
+#define GET_ACCOUNT_PROTOCOL(school_id) [NSString stringWithFormat:@"/user/account/%@",school_id]
+#define GET_MAIN_WEB_PROTOCOL(area_id) [NSString stringWithFormat:@"/home/%@",area_id]
+#define GET_DEFAULT_CITY_PROTOCOL @"/ip/city"
+#define GET_RATING_PROTOCOL(rating_id) [NSString stringWithFormat:@"/rating/%@",rating_id]
+#define GET_RESERVATION_PROTOCOL(res_id) [NSString stringWithFormat:@"/reservation/%@",res_id]
+//默认图
+#define DefaultImage [UIImage imageNamed:@"default.png"]
+#define PhotoDefaultImage [UIImage imageNamed:@"empty_user.png"]
+
+#define GREEN_COLOR RGBColor(0,162,83,1.0)

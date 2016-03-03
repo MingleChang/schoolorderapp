@@ -1,0 +1,8 @@
+platform :ios,'7.0'
+pod 'MJExtension', '~> 3.0.7'
+pod 'AFNetworking', '~> 2.5.4'
+pod 'IQKeyboardManager', '~> 3.2.4'
+pod 'RDVTabBarController', '~> 1.1.9'
+pod 'MJRefresh', '~> 2.3.2'
+pod 'MBProgressHUD', '~> 0.9.1'
+pod 'Masonry', '~> 0.6.4'

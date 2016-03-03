@@ -1,0 +1,23 @@
+[
+  {
+    "payType": 1,
+    "payMethod": "account",
+    "name": "账户余额支付",
+    "detail": "使用你的账户余额支付",
+    "image": "account_logo.png"
+  },
+  {
+    "payType": 2,
+    "payMethod": "unionpay",
+    "name": "银联支付",
+    "detail": "有银行卡用户使用，需开通网银",
+    "image": "unionpay_log.png"
+  },
+  {
+    "payType": 3,
+    "payMethod": "alipay",
+    "name": "支付宝支付",
+    "detail": "推荐有支付宝账号的用户使用",
+    "image": "alipay_logo.png"
+  }
+]

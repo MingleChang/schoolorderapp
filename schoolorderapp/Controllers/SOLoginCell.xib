@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SOLoginCell" rowHeight="100" id="KGk-i7-Jjw" customClass="SOLoginCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="预约学车更快捷！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULd-K9-VDX">
+                        <rect key="frame" x="84" y="15" width="152" height="23"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AyF-4U-8av">
+                        <rect key="frame" x="110" y="54" width="100" height="30"/>
+                        <color key="backgroundColor" red="0.0" green="0.63529411764705879" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="9lX-d8-aI6"/>
+                            <constraint firstAttribute="width" constant="100" id="IqX-cn-Gzu"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <state key="normal" title="立即登录">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="loginButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="7GX-dM-jBx"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="AyF-4U-8av" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="6Mh-9a-vKq"/>
+                    <constraint firstAttribute="bottom" secondItem="AyF-4U-8av" secondAttribute="bottom" constant="15" id="E9V-CR-0mM"/>
+                    <constraint firstItem="ULd-K9-VDX" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="MjV-ZE-Eo7"/>
+                    <constraint firstItem="ULd-K9-VDX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="iDj-hF-m0k"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="loginButton" destination="AyF-4U-8av" id="bnr-pC-F4Q"/>
+            </connections>
+            <point key="canvasLocation" x="94" y="415"/>
+        </tableViewCell>
+    </objects>
+</document>

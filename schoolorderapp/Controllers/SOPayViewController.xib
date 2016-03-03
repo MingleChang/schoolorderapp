@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SOPayViewController">
+            <connections>
+                <outlet property="mainTable" destination="Y7d-Zb-GDV" id="heD-U5-vRG"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Y7d-Zb-GDV">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="W5K-TC-aFh"/>
+                        <outlet property="delegate" destination="-1" id="KEY-DH-8kj"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Y7d-Zb-GDV" secondAttribute="bottom" id="Ca9-Sf-rza"/>
+                <constraint firstAttribute="trailing" secondItem="Y7d-Zb-GDV" secondAttribute="trailing" id="FOA-4Y-KRT"/>
+                <constraint firstItem="Y7d-Zb-GDV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="WEh-85-R5B"/>
+                <constraint firstItem="Y7d-Zb-GDV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XXQ-V1-Q30"/>
+            </constraints>
+            <point key="canvasLocation" x="412" y="338"/>
+        </view>
+    </objects>
+</document>

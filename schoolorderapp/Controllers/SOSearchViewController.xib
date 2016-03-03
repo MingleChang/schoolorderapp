@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SOSearchViewController">
+            <connections>
+                <outlet property="disMissBtn" destination="QM6-Wi-QYS" id="X6w-dD-4LI"/>
+                <outlet property="mainTable" destination="3GM-kg-xM4" id="BM9-FJ-juE"/>
+                <outlet property="searchBarView" destination="7Qz-dn-jT8" id="mFG-dl-iKt"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="7Qz-dn-jT8">
+                    <rect key="frame" x="0.0" y="0.0" width="247" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="QUK-zT-a8N"/>
+                    </constraints>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="NZc-X5-Fvv"/>
+                    </connections>
+                </searchBar>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7W5-4S-ty6">
+                    <rect key="frame" x="247" y="9" width="65" height="27"/>
+                    <color key="backgroundColor" red="0.44350630940000002" green="0.742483428" blue="0.37664069059999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="65" id="wMU-y6-vjw"/>
+                        <constraint firstAttribute="height" constant="27" id="xJO-b9-xne"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="搜索">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="searchBtnAction:" destination="-1" eventType="touchUpInside" id="jLX-OA-S0n"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3GM-kg-xM4">
+                    <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                    <color key="backgroundColor" red="0.91771111849999998" green="0.91771111849999998" blue="0.91771111849999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="cYG-1P-Ig5"/>
+                        <outlet property="delegate" destination="-1" id="nyc-Th-VNZ"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QM6-Wi-QYS">
+                    <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                    <connections>
+                        <action selector="disMissKeyBorad:" destination="-1" eventType="touchUpInside" id="XsU-xc-7Kz"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.91771111849999998" green="0.91771111849999998" blue="0.91771111849999998" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="3GM-kg-xM4" firstAttribute="top" secondItem="7Qz-dn-jT8" secondAttribute="bottom" id="2Lk-my-fOQ"/>
+                <constraint firstItem="7Qz-dn-jT8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AIL-wS-b6f"/>
+                <constraint firstAttribute="trailing" secondItem="7W5-4S-ty6" secondAttribute="trailing" constant="8" id="ALv-P9-frL"/>
+                <constraint firstAttribute="bottom" secondItem="3GM-kg-xM4" secondAttribute="bottom" id="HoK-Zi-19o"/>
+                <constraint firstItem="7W5-4S-ty6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="9" id="JwT-mM-GUI"/>
+                <constraint firstItem="7W5-4S-ty6" firstAttribute="leading" secondItem="7Qz-dn-jT8" secondAttribute="trailing" id="OiT-EZ-A3J"/>
+                <constraint firstItem="3GM-kg-xM4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tkL-jq-9kH"/>
+                <constraint firstItem="7Qz-dn-jT8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="uta-Se-Y6Z"/>
+                <constraint firstAttribute="trailing" secondItem="3GM-kg-xM4" secondAttribute="trailing" id="ygI-oA-sCp"/>
+            </constraints>
+            <point key="canvasLocation" x="353" y="278"/>
+        </view>
+    </objects>
+</document>
